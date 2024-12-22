@@ -8,48 +8,48 @@ import (
 
 func TestGetAPIKey(t *testing.T) {
 	tests := []struct {
-		name           string
-		headers        http.Header
-		expectedKey    string
-		expectedErr    error
+		name        string
+		headers     http.Header
+		expectedKey string
+		expectedErr error
 	}{
 		{
-			name:           "No Authorization Header",
-			headers:        http.Header{},
-			expectedKey:    "",
-			expectedErr:    ErrNoAuthHeaderIncluded,
+			name:        "No Authorization Header",
+			headers:     http.Header{},
+			expectedKey: "",
+			expectedErr: ErrNoAuthHeaderIncluded,
 		},
 		{
 			name: "Malformed Authorization Header - Missing ApiKey",
 			headers: http.Header{
 				"Authorization": []string{"Bearer some-token"},
 			},
-			expectedKey:    "",
-			expectedErr:    errors.New("malformed authorization header"),
+			expectedKey: "",
+			expectedErr: errors.New("malformed authorization header"),
 		},
 		{
 			name: "Malformed Authorization Header - No Space",
 			headers: http.Header{
 				"Authorization": []string{"ApiKeySomeKey"},
 			},
-			expectedKey:    "",
-			expectedErr:    errors.New("malformed authorization header"),
+			expectedKey: "",
+			expectedErr: errors.New("malformed authorization header"),
 		},
 		{
 			name: "Malformed Authorization Header - Missing Key",
 			headers: http.Header{
 				"Authorization": []string{"ApiKey"},
 			},
-			expectedKey:    "",
-			expectedErr:    errors.New("malformed authorization header"),
+			expectedKey: "",
+			expectedErr: errors.New("malformed authorization header"),
 		},
 		{
 			name: "Valid Authorization Header",
 			headers: http.Header{
 				"Authorization": []string{"ApiKey some-valid-key"},
 			},
-			expectedKey:    "some-valid-key",
-			expectedErr:    nil,
+			expectedKey: "some-valid-key",
+			expectedErr: nil,
 		},
 	}
 
