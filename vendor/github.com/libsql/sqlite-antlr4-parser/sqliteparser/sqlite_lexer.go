@@ -1,12 +1,13 @@
-// Code generated from SQLiteLexer.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from SQLiteLexer.g4 by ANTLR 4.12.0. DO NOT EDIT.
 
 package sqliteparser
 
 import (
 	"fmt"
-	"github.com/antlr4-go/antlr/v4"
 	"sync"
 	"unicode"
+
+	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 )
 
 // Suppress unused import error
@@ -21,28 +22,28 @@ type SQLiteLexer struct {
 	// TODO: EOF string
 }
 
-var SQLiteLexerLexerStaticData struct {
+var sqlitelexerLexerStaticData struct {
 	once                   sync.Once
 	serializedATN          []int32
-	ChannelNames           []string
-	ModeNames              []string
-	LiteralNames           []string
-	SymbolicNames          []string
-	RuleNames              []string
-	PredictionContextCache *antlr.PredictionContextCache
+	channelNames           []string
+	modeNames              []string
+	literalNames           []string
+	symbolicNames          []string
+	ruleNames              []string
+	predictionContextCache *antlr.PredictionContextCache
 	atn                    *antlr.ATN
 	decisionToDFA          []*antlr.DFA
 }
 
 func sqlitelexerLexerInit() {
-	staticData := &SQLiteLexerLexerStaticData
-	staticData.ChannelNames = []string{
+	staticData := &sqlitelexerLexerStaticData
+	staticData.channelNames = []string{
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
 	}
-	staticData.ModeNames = []string{
+	staticData.modeNames = []string{
 		"DEFAULT_MODE",
 	}
-	staticData.LiteralNames = []string{
+	staticData.literalNames = []string{
 		"", "';'", "'.'", "'('", "')'", "','", "'='", "'*'", "'+'", "'-'", "'~'",
 		"'||'", "'/'", "'%'", "'<<'", "'>>'", "'&'", "'|'", "'<'", "'<='", "'>'",
 		"'>='", "'=='", "'!='", "'<>'", "'ABORT'", "'ACTION'", "'ADD'", "'AFTER'",
@@ -73,7 +74,7 @@ func sqlitelexerLexerInit() {
 		"'NULLS'", "'FIRST'", "'LAST'", "'FILTER'", "'GROUPS'", "'EXCLUDE'",
 		"'TIES'", "'OTHERS'", "'DO'", "'NOTHING'",
 	}
-	staticData.SymbolicNames = []string{
+	staticData.symbolicNames = []string{
 		"", "SCOL", "DOT", "OPEN_PAR", "CLOSE_PAR", "COMMA", "ASSIGN", "STAR",
 		"PLUS", "MINUS", "TILDE", "PIPE2", "DIV", "MOD", "LT2", "GT2", "AMP",
 		"PIPE", "LT", "LT_EQ", "GT", "GT_EQ", "EQ", "NOT_EQ1", "NOT_EQ2", "ABORT_",
@@ -104,7 +105,7 @@ func sqlitelexerLexerInit() {
 		"BIND_PARAMETER", "STRING_LITERAL", "BLOB_LITERAL", "SINGLE_LINE_COMMENT",
 		"MULTILINE_COMMENT", "SPACES", "UNEXPECTED_CHAR",
 	}
-	staticData.RuleNames = []string{
+	staticData.ruleNames = []string{
 		"SCOL", "DOT", "OPEN_PAR", "CLOSE_PAR", "COMMA", "ASSIGN", "STAR", "PLUS",
 		"MINUS", "TILDE", "PIPE2", "DIV", "MOD", "LT2", "GT2", "AMP", "PIPE",
 		"LT", "LT_EQ", "GT", "GT_EQ", "EQ", "NOT_EQ1", "NOT_EQ2", "ABORT_",
@@ -135,7 +136,7 @@ func sqlitelexerLexerInit() {
 		"BIND_PARAMETER", "STRING_LITERAL", "BLOB_LITERAL", "SINGLE_LINE_COMMENT",
 		"MULTILINE_COMMENT", "SPACES", "UNEXPECTED_CHAR", "HEX_DIGIT", "DIGIT",
 	}
-	staticData.PredictionContextCache = antlr.NewPredictionContextCache()
+	staticData.predictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
 		4, 0, 193, 1704, 6, -1, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3,
 		2, 4, 7, 4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9,
@@ -917,7 +918,7 @@ func sqlitelexerLexerInit() {
 // NewSQLiteLexer(). You can call this function if you wish to initialize the static state ahead
 // of time.
 func SQLiteLexerInit() {
-	staticData := &SQLiteLexerLexerStaticData
+	staticData := &sqlitelexerLexerStaticData
 	staticData.once.Do(sqlitelexerLexerInit)
 }
 
@@ -926,13 +927,13 @@ func NewSQLiteLexer(input antlr.CharStream) *SQLiteLexer {
 	SQLiteLexerInit()
 	l := new(SQLiteLexer)
 	l.BaseLexer = antlr.NewBaseLexer(input)
-	staticData := &SQLiteLexerLexerStaticData
-	l.Interpreter = antlr.NewLexerATNSimulator(l, staticData.atn, staticData.decisionToDFA, staticData.PredictionContextCache)
-	l.channelNames = staticData.ChannelNames
-	l.modeNames = staticData.ModeNames
-	l.RuleNames = staticData.RuleNames
-	l.LiteralNames = staticData.LiteralNames
-	l.SymbolicNames = staticData.SymbolicNames
+	staticData := &sqlitelexerLexerStaticData
+	l.Interpreter = antlr.NewLexerATNSimulator(l, staticData.atn, staticData.decisionToDFA, staticData.predictionContextCache)
+	l.channelNames = staticData.channelNames
+	l.modeNames = staticData.modeNames
+	l.RuleNames = staticData.ruleNames
+	l.LiteralNames = staticData.literalNames
+	l.SymbolicNames = staticData.symbolicNames
 	l.GrammarFileName = "SQLiteLexer.g4"
 	// TODO: l.EOF = antlr.TokenEOF
 
