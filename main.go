@@ -39,7 +39,7 @@ func main() {
 	apiCfg := apiConfig{}
 
 	// https://github.com/libsql/libsql-client-go/#open-a-connection-to-sqld
-	// libsql://[your-database].turso.io?authToken=[your-auth-token]
+	// libsql://notely-db-pbologan.turso.io?authToken=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzUwMTg1MDksImlkIjoiMmEyNTA0ZTEtMDRjZC00YmQ0LWFjYmUtZGM0NmUyNzhkMDU2In0.VXKq8O_SB0wUlSdaxJPci_zB2wtYQtwmOKDWR3FlmFH3LXmyAclJ0oWrk28b3Z7cb4JtbWawSAmI9Wz_TzzYAw
 	dbURL := os.Getenv("DATABASE_URL")
 	if dbURL == "" {
 		log.Println("DATABASE_URL environment variable is not set")
